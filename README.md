@@ -33,15 +33,6 @@ Or you can [view upcoming implementations (WIPs)](https://github.com/gothinkster
 - There is a hosted version of the backend API available for public usage, no API keys are required
 - Interested in creating a new RealWorld stack? View our [starter guide & spec](https://realworld-docs.netlify.app/implementation-creation/introduction)
 
-# Active Maintainers
-
-#### [Gérôme Grignon](https://github.com/geromegrignon) - Maintainer
-
-<img align="left" width="40" height="40" src="https://avatars.githubusercontent.com/u/32737308?v=4">
-
-Gérôme is a Frontend Software Engineer at Lucca. He's an open-source enthusiast.<br /><br />
-
-#### [Manuel Vila](https://github.com/mvila) - Maintainer
 
 <img align="left" width="40" height="40" src="https://avatars.githubusercontent.com/u/381671?v=40">
 
