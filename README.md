@@ -34,7 +34,3 @@ Or you can [view upcoming implementations (WIPs)](https://github.com/gothinkster
 - Interested in creating a new RealWorld stack? View our [starter guide & spec](https://realworld-docs.netlify.app/implementation-creation/introduction)
 
 
-<img align="left" width="40" height="40" src="https://avatars.githubusercontent.com/u/381671?v=40">
-
-Manuel is an independent Software Engineer, creator of the [Layr framework](https://layrjs.com) and the [CodebaseShow website](https://codebase.show/).<br /><br />
-
