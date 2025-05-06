@@ -18,8 +18,8 @@ importers:
   apps/api:
     dependencies:
       '@prisma/client':
-        specifier: ^5.18.0
-        version: 5.20.0(prisma@5.20.0)
+        specifier: ^6.7.0
+        version: 6.7.0(prisma@5.20.0)
       bcryptjs:
         specifier: ^2.4.3
         version: 2.4.3
@@ -50,7 +50,7 @@ importers:
         version: 0.9.4(prettier@3.3.3)(typescript@5.6.2)
       '@astrojs/react':
         specifier: ^3.6.2
-        version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.8)
+        version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.19)
       '@astrojs/starlight':
         specifier: ^0.26.1
         version: 0.26.4(astro@4.15.12)
@@ -222,7 +222,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.8):
+  /@astrojs/react@3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.11)(react-dom@18.3.1)(react@18.3.1)(vite@5.4.19):
     resolution: {integrity: sha512-fK29lYI7zK/KG4ZBy956x4dmauZcZ18osFkuyGa8r3gmmCQa2NZ9XNu9WaVYEUm0j89f4Gii4tbxLoyM8nk2MA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
@@ -233,7 +233,7 @@ packages:
     dependencies:
       '@types/react': 18.3.11
       '@types/react-dom': 18.3.0
-      '@vitejs/plugin-react': 4.3.2(vite@5.4.8)
+      '@vitejs/plugin-react': 4.3.2(vite@5.4.19)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       ultrahtml: 1.5.3
@@ -528,6 +528,14 @@ packages:
       regenerator-runtime: 0.14.1
     dev: false
 
+  /@babel/runtime-corejs3@7.27.1:
+    resolution: {integrity: sha512-909rVuj3phpjW6y0MCXAZ5iNeORePa6ldJvp2baWGcTjwqbBDDz6xoS5JHJ7lS88NlwLYj07ImL/8IUMtDZzTA==}
+    engines: {node: '>=6.9.0'}
+    requiresBuild: true
+    dependencies:
+      core-js-pure: 3.42.0
+    dev: false
+
   /@babel/runtime@7.25.7:
     resolution: {integrity: sha512-FjoyLe754PMiYsFaN5C94ttGiOmBNYTf6pLr4xXHAT5uctHb092PBszndLDR5XA/jghQvn4n7JMHl7dmTgbm9w==}
     engines: {node: '>=6.9.0'}
@@ -621,11 +629,11 @@ packages:
     resolution: {integrity: sha512-fXVXEyFA5Yv3M3n8sUGT7+fvecGrZP4k6FnWWMSZVQf69kAq0LLpaBQLGcPR30m3zMmKYhECP4k/ZkzvhEW5kw==}
     dev: false
 
-  /@emnapi/runtime@1.3.0:
-    resolution: {integrity: sha512-XMBySMuNZs3DM96xcJmLW4EfGnf+uGmFNjzpehMjuX5PLB5j87ar2Zc4e3PVeZ3I5g3tYtAqskB28manlF69Zw==}
+  /@emnapi/runtime@1.4.3:
+    resolution: {integrity: sha512-pBPWdu6MLKROBX05wSNKcNb++m5Er+KQ9QkB+WVM+pW2Kx9hoSrVTnu3BdkI5eBLZoKu/J6mW/B6i6bJB2ytXQ==}
     requiresBuild: true
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.1
     dev: false
     optional: true
 
@@ -1239,7 +1247,7 @@ packages:
     cpu: [wasm32]
     requiresBuild: true
     dependencies:
-      '@emnapi/runtime': 1.3.0
+      '@emnapi/runtime': 1.4.3
     dev: false
     optional: true
 
@@ -1597,14 +1605,17 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@prisma/client@5.20.0(prisma@5.20.0):
-    resolution: {integrity: sha512-CLv55ZuMuUawMsxoqxGtLT3bEZoa2W8L3Qnp6rDIFWy+ZBrUcOFKdoeGPSnbBqxc3SkdxJrF+D1veN/WNynZYA==}
-    engines: {node: '>=16.13'}
+  /@prisma/client@6.7.0(prisma@5.20.0):
+    resolution: {integrity: sha512-+k61zZn1XHjbZul8q6TdQLpuI/cvyfil87zqK2zpreNIXyXtpUv3+H/oM69hcsFcZXaokHJIzPAt5Z8C8eK2QA==}
+    engines: {node: '>=18.18'}
     requiresBuild: true
     peerDependencies:
       prisma: '*'
+      typescript: '>=5.1.0'
     peerDependenciesMeta:
       prisma:
+        optional: true
+      typescript:
         optional: true
     dependencies:
       prisma: 5.20.0
@@ -1770,11 +1781,27 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-android-arm-eabi@4.40.1:
+    resolution: {integrity: sha512-kxz0YeeCrRUHz3zyqvd7n+TVRlNyTifBsmnmNPtk3hQURUyG9eAB+usz6DAwagMusjx/zb3AjvDUvhFGDAexGw==}
+    cpu: [arm]
+    os: [android]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-android-arm64@4.24.0:
     resolution: {integrity: sha512-ijLnS1qFId8xhKjT81uBHuuJp2lU4x2yxa4ctFPtG+MqEE6+C5f/+X/bStmxapgmwLwiL3ih122xv8kVARNAZA==}
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-android-arm64@4.40.1:
+    resolution: {integrity: sha512-PPkxTOisoNC6TpnDKatjKkjRMsdaWIhyuMkA4UsBXT9WEZY4uHezBTjs6Vl4PbqQQeu6oION1w2voYZv9yquCw==}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@rollup/rollup-darwin-arm64@4.24.0:
@@ -1784,11 +1811,43 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-darwin-arm64@4.40.1:
+    resolution: {integrity: sha512-VWXGISWFY18v/0JyNUy4A46KCFCb9NVsH+1100XP31lud+TzlezBbz24CYzbnA4x6w4hx+NYCXDfnvDVO6lcAA==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-darwin-x64@4.24.0:
     resolution: {integrity: sha512-X6/nOwoFN7RT2svEQWUsW/5C/fYMBe4fnLK9DQk4SX4mgVBiTA9h64kjUYPvGQ0F/9xwJ5U5UfTbl6BEjaQdBQ==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-darwin-x64@4.40.1:
+    resolution: {integrity: sha512-nIwkXafAI1/QCS7pxSpv/ZtFW6TXcNUEHAIA9EIyw5OzxJZQ1YDrX+CL6JAIQgZ33CInl1R6mHet9Y/UZTg2Bw==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@rollup/rollup-freebsd-arm64@4.40.1:
+    resolution: {integrity: sha512-BdrLJ2mHTrIYdaS2I99mriyJfGGenSaP+UwGi1kB9BLOCu9SR8ZpbkmmalKIALnRw24kM7qCN0IOm6L0S44iWw==}
+    cpu: [arm64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@rollup/rollup-freebsd-x64@4.40.1:
+    resolution: {integrity: sha512-VXeo/puqvCG8JBPNZXZf5Dqq7BzElNJzHRRw3vjBE27WujdzuOPecDPc/+1DcdcTptNBep3861jNq0mYkT8Z6Q==}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@rollup/rollup-linux-arm-gnueabihf@4.24.0:
@@ -1798,11 +1857,27 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-linux-arm-gnueabihf@4.40.1:
+    resolution: {integrity: sha512-ehSKrewwsESPt1TgSE/na9nIhWCosfGSFqv7vwEtjyAqZcvbGIg4JAcV7ZEh2tfj/IlfBeZjgOXm35iOOjadcg==}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-linux-arm-musleabihf@4.24.0:
     resolution: {integrity: sha512-it2BW6kKFVh8xk/BnHfakEeoLPv8STIISekpoF+nBgWM4d55CZKc7T4Dx1pEbTnYm/xEKMgy1MNtYuoA8RFIWw==}
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-linux-arm-musleabihf@4.40.1:
+    resolution: {integrity: sha512-m39iO/aaurh5FVIu/F4/Zsl8xppd76S4qoID8E+dSRQvTyZTOI2gVk3T4oqzfq1PtcvOfAVlwLMK3KRQMaR8lg==}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@rollup/rollup-linux-arm64-gnu@4.24.0:
@@ -1812,11 +1887,35 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-linux-arm64-gnu@4.40.1:
+    resolution: {integrity: sha512-Y+GHnGaku4aVLSgrT0uWe2o2Rq8te9hi+MwqGF9r9ORgXhmHK5Q71N757u0F8yU1OIwUIFy6YiJtKjtyktk5hg==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-linux-arm64-musl@4.24.0:
     resolution: {integrity: sha512-9E6MKUJhDuDh604Qco5yP/3qn3y7SLXYuiC0Rpr89aMScS2UAmK1wHP2b7KAa1nSjWJc/f/Lc0Wl1L47qjiyQw==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-linux-arm64-musl@4.40.1:
+    resolution: {integrity: sha512-jEwjn3jCA+tQGswK3aEWcD09/7M5wGwc6+flhva7dsQNRZZTe30vkalgIzV4tjkopsTS9Jd7Y1Bsj6a4lzz8gQ==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@rollup/rollup-linux-loongarch64-gnu@4.40.1:
+    resolution: {integrity: sha512-ySyWikVhNzv+BV/IDCsrraOAZ3UaC8SZB67FZlqVwXwnFhPihOso9rPOxzZbjp81suB1O2Topw+6Ug3JNegejQ==}
+    cpu: [loong64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@rollup/rollup-linux-powerpc64le-gnu@4.24.0:
@@ -1826,11 +1925,35 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-linux-powerpc64le-gnu@4.40.1:
+    resolution: {integrity: sha512-BvvA64QxZlh7WZWqDPPdt0GH4bznuL6uOO1pmgPnnv86rpUpc8ZxgZwcEgXvo02GRIZX1hQ0j0pAnhwkhwPqWg==}
+    cpu: [ppc64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-linux-riscv64-gnu@4.24.0:
     resolution: {integrity: sha512-M3Dg4hlwuntUCdzU7KjYqbbd+BLq3JMAOhCKdBE3TcMGMZbKkDdJ5ivNdehOssMCIokNHFOsv7DO4rlEOfyKpg==}
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-linux-riscv64-gnu@4.40.1:
+    resolution: {integrity: sha512-EQSP+8+1VuSulm9RKSMKitTav89fKbHymTf25n5+Yr6gAPZxYWpj3DzAsQqoaHAk9YX2lwEyAf9S4W8F4l3VBQ==}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@rollup/rollup-linux-riscv64-musl@4.40.1:
+    resolution: {integrity: sha512-n/vQ4xRZXKuIpqukkMXZt9RWdl+2zgGNx7Uda8NtmLJ06NL8jiHxUawbwC+hdSq1rrw/9CghCpEONor+l1e2gA==}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@rollup/rollup-linux-s390x-gnu@4.24.0:
@@ -1840,11 +1963,27 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-linux-s390x-gnu@4.40.1:
+    resolution: {integrity: sha512-h8d28xzYb98fMQKUz0w2fMc1XuGzLLjdyxVIbhbil4ELfk5/orZlSTpF/xdI9C8K0I8lCkq+1En2RJsawZekkg==}
+    cpu: [s390x]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-linux-x64-gnu@4.24.0:
     resolution: {integrity: sha512-ZXFk7M72R0YYFN5q13niV0B7G8/5dcQ9JDp8keJSfr3GoZeXEoMHP/HlvqROA3OMbMdfr19IjCeNAnPUG93b6A==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-linux-x64-gnu@4.40.1:
+    resolution: {integrity: sha512-XiK5z70PEFEFqcNj3/zRSz/qX4bp4QIraTy9QjwJAb/Z8GM7kVUsD0Uk8maIPeTyPCP03ChdI+VVmJriKYbRHQ==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@rollup/rollup-linux-x64-musl@4.24.0:
@@ -1854,11 +1993,27 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-linux-x64-musl@4.40.1:
+    resolution: {integrity: sha512-2BRORitq5rQ4Da9blVovzNCMaUlyKrzMSvkVR0D4qPuOy/+pMCrh1d7o01RATwVy+6Fa1WBw+da7QPeLWU/1mQ==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-win32-arm64-msvc@4.24.0:
     resolution: {integrity: sha512-VXBrnPWgBpVDCVY6XF3LEW0pOU51KbaHhccHw6AS6vBWIC60eqsH19DAeeObl+g8nKAz04QFdl/Cefta0xQtUQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-win32-arm64-msvc@4.40.1:
+    resolution: {integrity: sha512-b2bcNm9Kbde03H+q+Jjw9tSfhYkzrDUf2d5MAd1bOJuVplXvFhWz7tRtWvD8/ORZi7qSCy0idW6tf2HgxSXQSg==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@rollup/rollup-win32-ia32-msvc@4.24.0:
@@ -1868,11 +2023,27 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@rollup/rollup-win32-ia32-msvc@4.40.1:
+    resolution: {integrity: sha512-DfcogW8N7Zg7llVEfpqWMZcaErKfsj9VvmfSyRjCyo4BI3wPEfrzTtJkZG6gKP/Z92wFm6rz2aDO7/JfiR/whA==}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /@rollup/rollup-win32-x64-msvc@4.24.0:
     resolution: {integrity: sha512-fbMkAF7fufku0N2dE5TBXcNlg0pt0cJue4xBRE2Qc5Vqikxr4VCgKj/ht6SMdFcOacVA9rqF70APJ8RN/4vMJw==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    optional: true
+
+  /@rollup/rollup-win32-x64-msvc@4.40.1:
+    resolution: {integrity: sha512-ECyOuDeH3C1I8jH2MK1RtBJW+YPMvSfT0a5NN0nHfQYnDSJ6tUiZH3gzwVP5/Kfh/+Tt7tpWVF9LXNTnhTJ3kA==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
     optional: true
 
   /@shikijs/core@1.22.0:
@@ -1928,6 +2099,18 @@ packages:
       unraw: 3.0.0
     dev: false
 
+  /@swagger-api/apidom-ast@1.0.0-beta.35:
+    resolution: {integrity: sha512-qJ1oU1ycBKWffz8QqtHPBT+b5gD2kzoUSNxWYgQ+szvuNvc3/wtQRE6tORDUz1wksAn675NjAMc0/4+M0k75Eg==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      unraw: 3.0.0
+    dev: false
+
   /@swagger-api/apidom-core@1.0.0-alpha.9:
     resolution: {integrity: sha512-vGl8BWRf6ODl39fxElcIOjRE2QG5AJhn8tTNMqjjHB/2WppNBuxOVStYZeVJoWfK03OPK8v4Fp/TAcaP9+R7DQ==}
     dependencies:
@@ -1942,8 +2125,30 @@ packages:
       ts-mixer: 6.0.4
     dev: false
 
+  /@swagger-api/apidom-core@1.0.0-beta.35:
+    resolution: {integrity: sha512-lp6R9BBAQdzSYEmOF0l8RckjAVjcH86dBgDoOWFhMDYlitKYjg8DbMyp4jNYOYG/1xzvcX2KJ1SVUo847fF6dw==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-ast': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      minim: 0.23.8
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      short-unique-id: 5.2.0
+      ts-mixer: 6.0.4
+    dev: false
+
   /@swagger-api/apidom-error@1.0.0-alpha.9:
     resolution: {integrity: sha512-FU/2sFSgsICB9HYFELJ79caRpXXzlAV41QTHsAM46WfRehbzZUQpOBQm4jRi3qJGSa/Jk+mQ7Vt8HLRFMpJFfg==}
+    dependencies:
+      '@babel/runtime-corejs3': 7.25.7
+    dev: false
+
+  /@swagger-api/apidom-error@1.0.0-beta.35:
+    resolution: {integrity: sha512-NUbAZ/PlyzWngFUF3vCW+CaMkyd8WJH6kQeUNAhRmlPLpPKjufZ8gbA/4UIiQBode6MsKDYVIw8E/Yrpm/frXw==}
+    requiresBuild: true
     dependencies:
       '@babel/runtime-corejs3': 7.25.7
     dev: false
@@ -1959,14 +2164,25 @@ packages:
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
 
-  /@swagger-api/apidom-ns-api-design-systems@1.0.0-alpha.9:
-    resolution: {integrity: sha512-aduC2vbwGgn6ia9IkKpqBYBaKyIDGM/80M3oU3DFgaYIIwynzuwVpN1TkBOLIFy3mAzkWoYKUS0jdZJhMy/6Ug==}
+  /@swagger-api/apidom-json-pointer@1.0.0-beta.35:
+    resolution: {integrity: sha512-tnr1bMkaJaEbZquyNbLbvNAr0ewICpAqc1P0QP/BtipkVBbJ3cljlaXGlI4qNVldbWvTRCMG5K1CMDhDnkL7NQ==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-error': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swaggerexpert/json-pointer': 2.10.1
+    dev: false
+    optional: true
+
+  /@swagger-api/apidom-ns-api-design-systems@1.0.0-beta.35:
+    resolution: {integrity: sha512-wGLrFOcEv3efaDH2joayLsM70vHX1Lxy+9kpYH48hIiyjYLu7vliv7F1cfNStgd2ajb9/75mXnnjlHjXJFJovQ==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
@@ -1974,13 +2190,43 @@ packages:
     dev: false
     optional: true
 
-  /@swagger-api/apidom-ns-asyncapi-2@1.0.0-alpha.9:
-    resolution: {integrity: sha512-hZjxXJgMt517ADnAauWJh01k7WNRwkbWT5p6b7AXF2H3tl549A2hhLnIg3BBSE3GwB3Nv25GyrI3aA/1dFVC8A==}
+  /@swagger-api/apidom-ns-asyncapi-2@1.0.0-beta.35:
+    resolution: {integrity: sha512-30L9Zu4eoxpnPc3uVkCbtsMPV0wbZvSL3tA2OhwldzCYGC0MUchdgM7LiuOibMXTssj5cuk5M+pOVS6E4r6xpw==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-json-schema-draft-7': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-draft-7': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      ts-mixer: 6.0.4
+    dev: false
+    optional: true
+
+  /@swagger-api/apidom-ns-json-schema-2019-09@1.0.0-beta.35:
+    resolution: {integrity: sha512-9t5IXEWGUObeClg//UyiJTunIXuP0kFSCOjF0g2E0pGhsVu1Yd8ciYeFxe6ONXSoWvpmQiAVJo5dE2aJo8O/XA==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-draft-7': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      ts-mixer: 6.0.4
+    dev: false
+    optional: true
+
+  /@swagger-api/apidom-ns-json-schema-2020-12@1.0.0-beta.35:
+    resolution: {integrity: sha512-SdKVyIwpxQD4eNfK6ZQ8mcZn6PAHYlyE8lHxHW/SKj/jcz6XctGxHCp107PrLeFFEARuoD8HwBBijKIF5SZqaA==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-2019-09': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
@@ -1991,38 +2237,22 @@ packages:
   /@swagger-api/apidom-ns-json-schema-draft-4@1.0.0-alpha.9:
     resolution: {integrity: sha512-OfX4UBb08C0xD5+F80dQAM2yt5lXxcURWkVEeCwxz7i23BB3nNEbnZXNV91Qo9eaJflPh8dO9iiHQxvfw5IgSg==}
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-ast': 1.0.0-alpha.9
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-ast': 1.0.0-beta.35
+      '@swagger-api/apidom-core': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
       ts-mixer: 6.0.4
     dev: false
 
-  /@swagger-api/apidom-ns-json-schema-draft-6@1.0.0-alpha.9:
-    resolution: {integrity: sha512-qzUVRSSrnlYGMhK6w57o/RboNvy1FO0iFgEnTk56dD4wN49JRNuFqKI18IgXc1W2r9tTTG70nG1khe4cPE8TNg==}
+  /@swagger-api/apidom-ns-json-schema-draft-4@1.0.0-beta.35:
+    resolution: {integrity: sha512-I/KiUAIbuoDWku6COYxNeONlBUC44lX/TwdaMoriVal+NSNr6dCUQ9Ob+gxv3JZL1D6evVW/Gk0Sa7VLArQzIQ==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-error': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-json-schema-draft-4': 1.0.0-alpha.9
-      '@types/ramda': 0.30.2
-      ramda: 0.30.1
-      ramda-adjunct: 5.1.0(ramda@0.30.1)
-      ts-mixer: 6.0.4
-    dev: false
-    optional: true
-
-  /@swagger-api/apidom-ns-json-schema-draft-7@1.0.0-alpha.9:
-    resolution: {integrity: sha512-Zml8Z8VCckdFjvTogaec1dabd85hg1+xZDseWcCuD0tYkaTY/sZ8zzI0dz6/4HsKCb58qjiWSa0w60N8Syr6WQ==}
-    requiresBuild: true
-    dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-error': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-json-schema-draft-6': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-ast': 1.0.0-beta.35
+      '@swagger-api/apidom-core': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
@@ -2030,14 +2260,44 @@ packages:
     dev: false
     optional: true
 
-  /@swagger-api/apidom-ns-openapi-2@1.0.0-alpha.9:
-    resolution: {integrity: sha512-WUZxt7Gs7P4EQsGtoD6cKAjf0uDJhkUxsIW9Bb4EAgO6tdp7LlXhbJ0fJ2QycCLY717SfJbvGLfhuSfTYo4Iow==}
+  /@swagger-api/apidom-ns-json-schema-draft-6@1.0.0-beta.35:
+    resolution: {integrity: sha512-s4V7PqrJqCg84IE4yTKMqOg5fjy6wp7RhAoM6JdFCPfBYtjR5FliHbyuRSpJ3f7ueQUQimFAaC69HbOakOIbXA==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-error': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-json-schema-draft-4': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-draft-4': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      ts-mixer: 6.0.4
+    dev: false
+    optional: true
+
+  /@swagger-api/apidom-ns-json-schema-draft-7@1.0.0-beta.35:
+    resolution: {integrity: sha512-8zJ6D3hgxL2xSfIunTK3bimvBpPFBTRuDU63v+GFAAGMMWegeZiaiZ7AvlPTS5TD3vx4FYd7uC0dz/MY0dj0pA==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-draft-6': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      ts-mixer: 6.0.4
+    dev: false
+    optional: true
+
+  /@swagger-api/apidom-ns-openapi-2@1.0.0-beta.35:
+    resolution: {integrity: sha512-zStIGykjf5Lz8/Hyp9yOkTXnjwKgXr/78mDoQn0Mgd7LgcKy/Ps/6spoOVbefBpSwV9+cihhnNEH4BeMjokdFA==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-draft-4': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
@@ -2058,6 +2318,21 @@ packages:
       ts-mixer: 6.0.4
     dev: false
 
+  /@swagger-api/apidom-ns-openapi-3-0@1.0.0-beta.35:
+    resolution: {integrity: sha512-tb1xiLfkPyQFjmlLDD2uxmMeR8ubgGneLQPaJ1e/sBGWickAllU7pNOy6jslbL9uh9QOLVMkgMX/65ksxDM39w==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-draft-4': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      ts-mixer: 6.0.4
+    dev: false
+    optional: true
+
   /@swagger-api/apidom-ns-openapi-3-1@1.0.0-alpha.9:
     resolution: {integrity: sha512-nQOwNQgf0C8EVjf2loAAl4ifRuVOdcqycvXUdcTpsUfHN3fbndR8IKpb26mQNmnACmqgmX+LkbMdW9b+K6089g==}
     dependencies:
@@ -2072,13 +2347,16 @@ packages:
       ts-mixer: 6.0.4
     dev: false
 
-  /@swagger-api/apidom-ns-workflows-1@1.0.0-alpha.9:
-    resolution: {integrity: sha512-yKo0p8OkQmDib93Kt1yqWmI7JsD6D9qUHxr/SCuAmNNWny1hxm7cZGoKJwJlGd0uAg84j4vmzWOlG3AsJbnT8g==}
+  /@swagger-api/apidom-ns-openapi-3-1@1.0.0-beta.35:
+    resolution: {integrity: sha512-ViC44hx/UuybrOVL/DtWZTcqvjOIh9ZzuGUF21e5/LSsTjHZmYdYEAsKxwfnGC5YFBu3N9JDQTUAxGNW1BmCsw==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-ast': 1.0.0-beta.35
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-json-pointer': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-2020-12': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-0': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
@@ -2086,205 +2364,219 @@ packages:
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-api-design-systems-json@1.0.0-alpha.9:
-    resolution: {integrity: sha512-xfVMR4HrTzXU0HB4TtxwkNbUIa/cQrPa0BWutJZ0fMYMAtUox2s8GsFYnJfZP52XfpSHFM1VPclivorZqET14g==}
+  /@swagger-api/apidom-ns-workflows-1@1.0.0-beta.29:
+    resolution: {integrity: sha512-77A0vMgDzqIq39HGZ2uPzkoz6bE28mkKR5khoEEs9P1tfGYf5Umnbei7JX5S0QtC7tN/F2WjUKrrNOzZyax67w==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-api-design-systems': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-json': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-json-schema-2020-12': 1.0.0-beta.35
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      ts-mixer: 6.0.4
+    dev: false
+    optional: true
+
+  /@swagger-api/apidom-parser-adapter-api-design-systems-json@1.0.0-beta.35:
+    resolution: {integrity: sha512-F3mOjJu9WpzvdqatKBhspaekBeV79HTozTNHbjqV9zCQbjMmLbMtLhyXO+Uk1VRVS/gZ4tBOdI3IPlHCDQoLDw==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-api-design-systems': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-json': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-api-design-systems-yaml@1.0.0-alpha.9:
-    resolution: {integrity: sha512-lJZkrhZ8qRTtc5fSLKefCv8j7Xzo8UBfMjpqTJhmETAtU8YfVV2i2znjgxJpm0QwV6FVQqGfK1+ASZQWPLiVcA==}
+  /@swagger-api/apidom-parser-adapter-api-design-systems-yaml@1.0.0-beta.35:
+    resolution: {integrity: sha512-+XDeUiY12CKkPA4qHhUHVL2bsF/Fe3qDnELybe0HJ4lmL1DCO/ikDWiKLtAYea5172aI8LahrEWic6N6FJwMFg==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-api-design-systems': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-api-design-systems': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-asyncapi-json-2@1.0.0-alpha.9:
-    resolution: {integrity: sha512-65nmKdPzw4C1bmtYn+3zoxXCI6Gnobr0StI9XE0YWiK+lpso7RH3Cgyl1yPZ0DBRVGzP+Fn9FVzmDNulEfR95w==}
+  /@swagger-api/apidom-parser-adapter-asyncapi-json-2@1.0.0-beta.35:
+    resolution: {integrity: sha512-w+iiH6ydESsMJk5VLAbdwBGzpfvZ4ZNU4Mt66OeYu9Bnc5xOOJdE5lHsTzfuoy2BQK8qur1+7D5ZLsUF7Q5djg==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-asyncapi-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-json': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-asyncapi-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-json': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-asyncapi-yaml-2@1.0.0-alpha.9:
-    resolution: {integrity: sha512-RLI4FpVB3vB6mIuT77yrsv5V2LMZ80dW9XpV+Fmbd4Jkdj+ysAFwT38cI4AsUMOxixpTDIXY1oWD7AjvylHhQQ==}
+  /@swagger-api/apidom-parser-adapter-asyncapi-yaml-2@1.0.0-beta.35:
+    resolution: {integrity: sha512-5yAwWZcERmqcCuS6l9nmnSIZvBt6Yay0Skm2rcOzTDVh5NaUwyjhbiEZRoBKP4fg+ubzdaZpVdhiPQweOecAbA==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-asyncapi-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-asyncapi-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-json@1.0.0-alpha.9:
-    resolution: {integrity: sha512-aOewp8/3zobf/O+5Jx8y7+bX3BPRfRlHIv15qp4YVTsLs6gLISWSzTO9JpWe9cR+AfhpsAalFq4t1LwIkmLk4A==}
+  /@swagger-api/apidom-parser-adapter-json@1.0.0-beta.35:
+    resolution: {integrity: sha512-brSHVaZ4mVykGkhImAQhlOaJyKMAjgiQbds76n8nOg6FdZ0N0+9pb5pwpTB32t2pq9ZoZpr/MQLQLAwd4hjzEw==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-ast': 1.0.0-alpha.9
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-error': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-ast': 1.0.0-beta.35
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
-      tree-sitter: 0.20.4
-      tree-sitter-json: 0.20.2
-      web-tree-sitter: 0.20.3
+      tree-sitter: 0.22.1
+      tree-sitter-json: 0.24.8(tree-sitter@0.22.1)
+      web-tree-sitter: 0.24.5
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-openapi-json-2@1.0.0-alpha.9:
-    resolution: {integrity: sha512-zgtsAfkplCFusX2P/saqdn10J8P3kQizCXxHLvxd2j0EhMJk2wfu4HYN5Pej/7/qf/OR1QZxqtacwebd4RfpXA==}
+  /@swagger-api/apidom-parser-adapter-openapi-json-2@1.0.0-beta.35:
+    resolution: {integrity: sha512-Pql7cNVwPoj1exvxn+vLF/qprRJeZZqvjeY9aCWaE5tN38UkEuAQrhIA9f/aNhcjgmpcpXwHcPKDogq5N3PDxw==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-json': 1.0.0-alpha.9
-      '@types/ramda': 0.30.2
-      ramda: 0.30.1
-      ramda-adjunct: 5.1.0(ramda@0.30.1)
-    dev: false
-    optional: true
-
-  /@swagger-api/apidom-parser-adapter-openapi-json-3-0@1.0.0-alpha.9:
-    resolution: {integrity: sha512-iPuHf0cAZSUhSv8mB0FnVgatTc26cVYohgqz2cvjoGofdqoh5KKIfxOkWlIhm+qGuBp71CfZUrPYPRsd0dHgeg==}
-    requiresBuild: true
-    dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-0': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-json': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-json': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-openapi-json-3-1@1.0.0-alpha.9:
-    resolution: {integrity: sha512-jwkfO7tzZyyrAgok+O9fKFOv1q/5njMb9DBc3D/ZF3ZLTcnEw8uj4V2HkjKxUweH5k8ip/gc8ueKmO/i7p2fng==}
+  /@swagger-api/apidom-parser-adapter-openapi-json-3-0@1.0.0-beta.35:
+    resolution: {integrity: sha512-KjmN7+jBaqztPaDF0K6H2/wKC9JbKM4ts6MP+uWjV0p5oITA6IjydrfBWXaG7yE1jgZd63Bvyo9vD/GLPDfT+g==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-json': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-0': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-json': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-openapi-yaml-2@1.0.0-alpha.9:
-    resolution: {integrity: sha512-jEIDpjbjwFKXQXS/RHJeA4tthsguLoz+nJPYS3AOLfuSiby5QXsKTxgqHXxG/YJqF1xJbZL+5KcF8UyiDePumw==}
+  /@swagger-api/apidom-parser-adapter-openapi-json-3-1@1.0.0-beta.35:
+    resolution: {integrity: sha512-pvLBB+sjRqJy7eFcYT/T/eMjkTsD20X0X9rs/Auwy1NNBUjEhySqWct2ITIzzFC2L38PdCmILWIckFkBfJcmDw==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-json': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-openapi-yaml-3-0@1.0.0-alpha.9:
-    resolution: {integrity: sha512-ieJL8dfIF8fmP3uJRNh/duJa3cCIIv6MzUe6o4uPT/oTDroy4qIATvnq9Dq/gtAv6rcPRpA9VhyghJ1DmjKsZQ==}
+  /@swagger-api/apidom-parser-adapter-openapi-yaml-2@1.0.0-beta.35:
+    resolution: {integrity: sha512-lZzbiFloPKYFepEIsxcvGpSL2qviANxAAAMKT82w0bJg7waFZI5jpPkRh0F0xVBxzacJLSsElk6jPWYQwVYdiA==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-0': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-openapi-yaml-3-1@1.0.0-alpha.9:
-    resolution: {integrity: sha512-EatIH7PZQSNDsRn9ompc62MYzboY7wAkjfYz+2FzBaSA8Vl5/+740qGQj22tu/xhwW4K72aV2NNL1m47QVF7hA==}
+  /@swagger-api/apidom-parser-adapter-openapi-yaml-3-0@1.0.0-beta.35:
+    resolution: {integrity: sha512-8Brb1aA7yYTqTsrqLvlPCQ3eODb8l0TPbL+RHYjFpazkYSUyC2jjhik+DJpRQ1DPfjoMFvAPudyBEjZTaHFMRQ==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-0': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-workflows-json-1@1.0.0-alpha.9:
-    resolution: {integrity: sha512-LylC2cQdAmvR7bXqwMwBt6FHTMVGinwIdI8pjl4EbPT9hCVm1rdED53caTYM4gCm+CJGRw20r4gb9vn3+N6RrA==}
+  /@swagger-api/apidom-parser-adapter-openapi-yaml-3-1@1.0.0-beta.35:
+    resolution: {integrity: sha512-8+DRo4Aur6U/vDeyiGG4UsTmmSyaxNjqWzKQ4XGtkBftNOP+0+g/SWLNqjeSxqJKYPthCV8lE30NKGxtLbilgQ==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-workflows-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-json': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-workflows-yaml-1@1.0.0-alpha.9:
-    resolution: {integrity: sha512-TlA4+1ca33D7fWxO5jKBytSCv86IGI4Lze4JfrawWUXZ5efhi4LiNmW5TrGlZUyvL7yJtZcA4tn3betlj6jVwA==}
+  /@swagger-api/apidom-parser-adapter-workflows-json-1@1.0.0-beta.29:
+    resolution: {integrity: sha512-94QNVyfWG5qAg13N2UDzVRqUahdGCSdrlzu72QJNv6gVO3NiMQE06ycnJETx6XMrQ63BwS6Y7YcNiH6QAjshjg==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-workflows-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-workflows-1': 1.0.0-beta.29
+      '@swagger-api/apidom-parser-adapter-json': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     dev: false
     optional: true
 
-  /@swagger-api/apidom-parser-adapter-yaml-1-2@1.0.0-alpha.9:
-    resolution: {integrity: sha512-jSIHEB7lbh+MP3BhYIXFkeivDR01kugXN70e5FskW7oet2TIARsVEPheWKQFSP1U8bUZA4bsp9h9gOQ9xEeErw==}
+  /@swagger-api/apidom-parser-adapter-workflows-yaml-1@1.0.0-beta.29:
+    resolution: {integrity: sha512-4SlseSr5UORGVUoCq10gbyZq/XQaqvNkizv80Q1It0xy2I86ic5BoqFLF5rTaZEMHG+ExIq/7OdyUq4cDSIBfg==}
     requiresBuild: true
     dependencies:
-      '@babel/runtime-corejs3': 7.25.7
-      '@swagger-api/apidom-ast': 1.0.0-alpha.9
-      '@swagger-api/apidom-core': 1.0.0-alpha.9
-      '@swagger-api/apidom-error': 1.0.0-alpha.9
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-workflows-1': 1.0.0-beta.29
+      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-beta.35
       '@types/ramda': 0.30.2
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
-      tree-sitter: 0.20.4
-      tree-sitter-yaml: 0.5.0
-      web-tree-sitter: 0.20.3
+    dev: false
+    optional: true
+
+  /@swagger-api/apidom-parser-adapter-yaml-1-2@1.0.0-beta.35:
+    resolution: {integrity: sha512-NgIzznK+JBV3NLOWukmjw6G3hCow8U/JiUu/6CcWupKkuT2CMJwVrZT9unwDkxZ0uYgJI+37J1g9BynOBebuOg==}
+    requiresBuild: true
+    dependencies:
+      '@babel/runtime-corejs3': 7.27.1
+      '@swagger-api/apidom-ast': 1.0.0-beta.35
+      '@swagger-api/apidom-core': 1.0.0-beta.35
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@tree-sitter-grammars/tree-sitter-yaml': 0.7.0(tree-sitter@0.22.1)
+      '@types/ramda': 0.30.2
+      ramda: 0.30.1
+      ramda-adjunct: 5.1.0(ramda@0.30.1)
+      tree-sitter: 0.22.1
+      web-tree-sitter: 0.24.5
     dev: false
     optional: true
 
@@ -2300,30 +2592,54 @@ packages:
       ramda: 0.30.1
       ramda-adjunct: 5.1.0(ramda@0.30.1)
     optionalDependencies:
-      '@swagger-api/apidom-error': 1.0.0-alpha.9
-      '@swagger-api/apidom-json-pointer': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-asyncapi-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-0': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-ns-workflows-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-api-design-systems-json': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-api-design-systems-yaml': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-asyncapi-json-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-asyncapi-yaml-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-json': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-openapi-json-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-openapi-json-3-0': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-openapi-json-3-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-openapi-yaml-2': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-openapi-yaml-3-0': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-openapi-yaml-3-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-workflows-json-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-workflows-yaml-1': 1.0.0-alpha.9
-      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-alpha.9
+      '@swagger-api/apidom-error': 1.0.0-beta.35
+      '@swagger-api/apidom-json-pointer': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-asyncapi-2': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-2': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-0': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-openapi-3-1': 1.0.0-beta.35
+      '@swagger-api/apidom-ns-workflows-1': 1.0.0-beta.29
+      '@swagger-api/apidom-parser-adapter-api-design-systems-json': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-api-design-systems-yaml': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-asyncapi-json-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-asyncapi-yaml-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-json': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-openapi-json-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-openapi-json-3-0': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-openapi-json-3-1': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-openapi-yaml-2': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-openapi-yaml-3-0': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-openapi-yaml-3-1': 1.0.0-beta.35
+      '@swagger-api/apidom-parser-adapter-workflows-json-1': 1.0.0-beta.29
+      '@swagger-api/apidom-parser-adapter-workflows-yaml-1': 1.0.0-beta.29
+      '@swagger-api/apidom-parser-adapter-yaml-1-2': 1.0.0-beta.35
     transitivePeerDependencies:
       - debug
     dev: false
+
+  /@swaggerexpert/json-pointer@2.10.1:
+    resolution: {integrity: sha512-vO00uiH1BYtexY7BR2vN5WWnXenwwJF9Db5lQL6SqhfkOqqAOGlbruwFMxktskNV8GOXWOjW3pVOLEsnFxj6RQ==}
+    engines: {node: '>=12.20.0'}
+    requiresBuild: true
+    dependencies:
+      apg-lite: 1.0.4
+    dev: false
+    optional: true
+
+  /@tree-sitter-grammars/tree-sitter-yaml@0.7.0(tree-sitter@0.22.1):
+    resolution: {integrity: sha512-GOMIK3IaDvECD0eZEhAsLl03RMtM1E8StxuGMn6PpMKFg7jyQ+jSzxJZ4Jmc/tYitah9/AECt8o4tlRQ5yEZQg==}
+    requiresBuild: true
+    peerDependencies:
+      tree-sitter: ^0.22.1
+    peerDependenciesMeta:
+      tree-sitter:
+        optional: true
+    dependencies:
+      node-addon-api: 8.3.1
+      node-gyp-build: 4.8.4
+      tree-sitter: 0.22.1
+    dev: false
+    optional: true
 
   /@types/acorn@4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
@@ -2378,6 +2694,10 @@ packages:
 
   /@types/estree@1.0.6:
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
+
+  /@types/estree@1.0.7:
+    resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
+    dev: false
 
   /@types/hast@2.3.10:
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
@@ -2498,7 +2818,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react@4.3.2(vite@5.4.8):
+  /@vitejs/plugin-react@4.3.2(vite@5.4.19):
     resolution: {integrity: sha512-hieu+o05v4glEBucTcKMK3dlES0OeJlD9YVOAPraVMOInBCwzumaIFiUjr4bHK7NPgnAHgiskUoceKercrN8vg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -2509,7 +2829,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.25.7(@babel/core@7.25.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.8
+      vite: 5.4.19
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2858,7 +3178,7 @@ packages:
   /autolinker@3.16.2:
     resolution: {integrity: sha512-JiYl7j2Z19F9NdTmirENSUUIIL/9MytEWtmzhfmsKPCp9E+G35Y0UNCMoM9tFigxT59qSc8Ml2dlZXOCVTYwuA==}
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.1
     dev: false
 
   /autoprefixer@10.4.20(postcss@8.4.47):
@@ -2904,6 +3224,12 @@ packages:
 
   /bare-events@2.5.0:
     resolution: {integrity: sha512-/E8dDe9dsbLyh2qrZ64PEPadOQ0F4gbl1sUJOrmph7xOiIxfY8vwab/4bFLh4Y88/Hk/ujKcrQKc+ps0mv873A==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /bare-events@2.5.4:
+    resolution: {integrity: sha512-+gFfDkR8pj4/TrWCGUGWmJIkBwuxPS5F+a5yWjOHQt2hHvNZd5YLzadjmDUtFmMM4y429bnKLa8bYBMHcYdnQA==}
     requiresBuild: true
     optional: true
 
@@ -3349,6 +3675,11 @@ packages:
 
   /core-js-pure@3.38.1:
     resolution: {integrity: sha512-BY8Etc1FZqdw1glX0XNOq2FDwfrg/VGqoZOZCdaL+UmdaqDwQwYXkMJT4t6In+zfEfOJDcM9T0KdbBeJg8KKCQ==}
+    requiresBuild: true
+    dev: false
+
+  /core-js-pure@3.42.0:
+    resolution: {integrity: sha512-007bM04u91fF4kMgwom2I5cQxAFIy8jVulgr9eozILl/SZE53QOqnW/+vviC+wQWLv+AunBG+8Q0TLoeSsSxRQ==}
     requiresBuild: true
     dev: false
 
@@ -5744,11 +6075,11 @@ packages:
       thenify-all: 1.6.0
     dev: false
 
-  /nan@2.20.0:
-    resolution: {integrity: sha512-bk3gXBZDGILuuo/6sKtr0DQmSThYHLtNCdSdXk9YkxD/jK6X2vmCyyXBBxyqZ4XcnzTyYEAThfX3DCEnLf6igw==}
-    requiresBuild: true
+  /nanoid@3.3.11:
+    resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
     dev: false
-    optional: true
 
   /nanoid@3.3.7:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
@@ -5893,6 +6224,13 @@ packages:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}
     dev: true
 
+  /node-addon-api@8.3.1:
+    resolution: {integrity: sha512-lytcDEdxKjGJPTLEfW4mYMigRezMlyJY8W4wxJK8zE533Jlb8L8dRuObJFWg2P+AuOIxoCgKF+2Oq4d4Zd0OUA==}
+    engines: {node: ^18 || ^20 || >= 21}
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
@@ -5931,6 +6269,13 @@ packages:
     resolution: {integrity: sha512-IRUxE4BVsHWXkV/SFOut4qTlagw2aM8T5/vnTsmrHJvVoKueJHRc/JaFND7QDDc61kLYUJ6qlZM3sqTSyx2dTw==}
     hasBin: true
     dev: true
+
+  /node-gyp-build@4.8.4:
+    resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
+    hasBin: true
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
@@ -6253,6 +6598,10 @@ packages:
     resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
     dev: false
 
+  /picocolors@1.1.1:
+    resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
+    dev: false
+
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -6354,6 +6703,15 @@ packages:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.1.0
+      source-map-js: 1.2.1
+    dev: false
+
+  /postcss@8.5.3:
+    resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.11
+      picocolors: 1.1.1
       source-map-js: 1.2.1
     dev: false
 
@@ -7001,6 +7359,36 @@ packages:
       '@rollup/rollup-win32-x64-msvc': 4.24.0
       fsevents: 2.3.3
 
+  /rollup@4.40.1:
+    resolution: {integrity: sha512-C5VvvgCCyfyotVITIAv+4efVytl5F7wt+/I2i9q9GZcEXW9BP52YYOXC58igUi+LFZVHukErIIqQSWwv/M3WRw==}
+    engines: {node: '>=18.0.0', npm: '>=8.0.0'}
+    hasBin: true
+    dependencies:
+      '@types/estree': 1.0.7
+    optionalDependencies:
+      '@rollup/rollup-android-arm-eabi': 4.40.1
+      '@rollup/rollup-android-arm64': 4.40.1
+      '@rollup/rollup-darwin-arm64': 4.40.1
+      '@rollup/rollup-darwin-x64': 4.40.1
+      '@rollup/rollup-freebsd-arm64': 4.40.1
+      '@rollup/rollup-freebsd-x64': 4.40.1
+      '@rollup/rollup-linux-arm-gnueabihf': 4.40.1
+      '@rollup/rollup-linux-arm-musleabihf': 4.40.1
+      '@rollup/rollup-linux-arm64-gnu': 4.40.1
+      '@rollup/rollup-linux-arm64-musl': 4.40.1
+      '@rollup/rollup-linux-loongarch64-gnu': 4.40.1
+      '@rollup/rollup-linux-powerpc64le-gnu': 4.40.1
+      '@rollup/rollup-linux-riscv64-gnu': 4.40.1
+      '@rollup/rollup-linux-riscv64-musl': 4.40.1
+      '@rollup/rollup-linux-s390x-gnu': 4.40.1
+      '@rollup/rollup-linux-x64-gnu': 4.40.1
+      '@rollup/rollup-linux-x64-musl': 4.40.1
+      '@rollup/rollup-win32-arm64-msvc': 4.40.1
+      '@rollup/rollup-win32-ia32-msvc': 4.40.1
+      '@rollup/rollup-win32-x64-msvc': 4.40.1
+      fsevents: 2.3.3
+    dev: false
+
   /run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
@@ -7305,7 +7693,7 @@ packages:
       queue-tick: 1.0.1
       text-decoder: 1.2.0
     optionalDependencies:
-      bare-events: 2.5.0
+      bare-events: 2.5.4
 
   /string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
@@ -7642,28 +8030,27 @@ packages:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: true
 
-  /tree-sitter-json@0.20.2:
-    resolution: {integrity: sha512-eUxrowp4F1QEGk/i7Sa+Xl8Crlfp7J0AXxX1QdJEQKQYMWhgMbCIgyQvpO3Q0P9oyTrNQxRLlRipDS44a8EtRw==}
+  /tree-sitter-json@0.24.8(tree-sitter@0.22.1):
+    resolution: {integrity: sha512-Tc9ZZYwHyWZ3Tt1VEw7Pa2scu1YO7/d2BCBbKTx5hXwig3UfdQjsOPkPyLpDJOn/m1UBEWYAtSdGAwCSyagBqQ==}
     requiresBuild: true
+    peerDependencies:
+      tree-sitter: ^0.21.1
+    peerDependenciesMeta:
+      tree-sitter:
+        optional: true
     dependencies:
-      nan: 2.20.0
+      node-addon-api: 8.3.1
+      node-gyp-build: 4.8.4
+      tree-sitter: 0.22.1
     dev: false
     optional: true
 
-  /tree-sitter-yaml@0.5.0:
-    resolution: {integrity: sha512-POJ4ZNXXSWIG/W4Rjuyg36MkUD4d769YRUGKRqN+sVaj/VCo6Dh6Pkssn1Rtewd5kybx+jT1BWMyWN0CijXnMA==}
+  /tree-sitter@0.22.1:
+    resolution: {integrity: sha512-gRO+jk2ljxZlIn20QRskIvpLCMtzuLl5T0BY6L9uvPYD17uUrxlxWkvYCiVqED2q2q7CVtY52Uex4WcYo2FEXw==}
     requiresBuild: true
     dependencies:
-      nan: 2.20.0
-    dev: false
-    optional: true
-
-  /tree-sitter@0.20.4:
-    resolution: {integrity: sha512-rjfR5dc4knG3jnJNN/giJ9WOoN1zL/kZyrS0ILh+eqq8RNcIbiXA63JsMEgluug0aNvfQvK4BfCErN1vIzvKog==}
-    requiresBuild: true
-    dependencies:
-      nan: 2.20.0
-      prebuild-install: 7.1.2
+      node-addon-api: 8.3.1
+      node-gyp-build: 4.8.4
     dev: false
     optional: true
 
@@ -7700,8 +8087,8 @@ packages:
       typescript: 5.6.2
     dev: false
 
-  /tslib@2.7.0:
-    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
+  /tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
     dev: false
 
   /tunnel-agent@0.6.0:
@@ -8121,6 +8508,44 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
+  /vite@5.4.19:
+    resolution: {integrity: sha512-qO3aKv3HoQC8QKiNSTuUM1l9o/XX3+c+VTgLHbJWHZGeTPVAg2XwazI9UWzoxjIJCGCV2zU60uqMzjeLZuULqA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': ^18.0.0 || >=20.0.0
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      sass-embedded: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      sass-embedded:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.21.5
+      postcss: 8.5.3
+      rollup: 4.40.1
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: false
+
   /vite@5.4.8:
     resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -8371,8 +8796,8 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
-  /web-tree-sitter@0.20.3:
-    resolution: {integrity: sha512-zKGJW9r23y3BcJusbgvnOH2OYAW40MXAOi9bi3Gcc7T4Gms9WWgXF8m6adsJWpGJEhgOzCrfiz1IzKowJWrtYw==}
+  /web-tree-sitter@0.24.5:
+    resolution: {integrity: sha512-+J/2VSHN8J47gQUAvF8KDadrfz6uFYVjxoxbKWDoXVsH2u7yLdarCnIURnrMA6uSRkgX3SdmqM5BOoQjPdSh5w==}
     requiresBuild: true
     dev: false
     optional: true
